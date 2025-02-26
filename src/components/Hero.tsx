@@ -1,4 +1,3 @@
-
 const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -16,8 +15,8 @@ const Hero = () => {
         </video>
       </div>
       
-      {/* Overlay */}
-      <div className="absolute inset-0 hero-overlay bg-opacity-60"></div>
+      {/* Overlay with enhanced gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-background/70 to-background"></div>
       
       {/* Content */}
       <div className="relative z-10 text-center px-6">

@@ -45,8 +45,12 @@ const Films = () => {
   const [hoveredFilm, setHoveredFilm] = useState<number | null>(null);
 
   return (
-    <section id="films" className="py-24 bg-background">
-      <div className="container px-4 mx-auto">
+    <section id="films" className="relative py-24 bg-background">
+      {/* Background gradients */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-black/50 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent pointer-events-none"></div>
+      
+      <div className="container px-4 mx-auto relative z-10">
         <div className="flex items-center gap-4 mb-12">
           <FilmIcon className="w-8 h-8 text-gold" />
           <h2 className="text-3xl md:text-4xl font-playfair font-bold">Featured Films</h2>
