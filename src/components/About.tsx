@@ -1,17 +1,18 @@
-
 import { User, Award, Film } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="relative py-24">
+    <section id="about" className="relative py-24 w-full">
       {/* Background gradients */}
       <div className="absolute inset-0 bg-gradient-to-bl from-background via-background to-black/50 pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent pointer-events-none"></div>
-      
+
       <div className="container px-4 mx-auto relative z-10">
         <div className="flex items-center gap-4 mb-12">
           <User className="w-8 h-8 text-gold" />
-          <h2 className="text-3xl md:text-4xl font-playfair font-bold">About Me</h2>
+          <h2 className="text-3xl md:text-4xl font-playfair font-bold">
+            About Me
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -19,7 +20,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-[3/4] rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1603574670812-d24560880210"
+                src="src/components/assets/DSC06680c.jpg"
                 alt="Jasmijn Schrofer"
                 className="w-full h-full object-cover"
               />
@@ -31,7 +32,11 @@ const About = () => {
           <div className="space-y-8">
             <div className="prose prose-invert">
               <p className="text-lg text-white/80 leading-relaxed">
-                As a film director based in Amsterdam, I specialize in crafting visual narratives that challenge perspectives and touch hearts. With over a decade of experience in both documentary and narrative filmmaking, I bring stories to life through a unique lens that combines artistic vision with emotional authenticity.
+                As a film director based in Amsterdam, I specialize in crafting
+                visual narratives that challenge perspectives and touch hearts.
+                With over a decade of experience in both documentary and
+                narrative filmmaking, I bring stories to life through a unique
+                lens that combines artistic vision with emotional authenticity.
               </p>
             </div>
 
@@ -58,7 +63,14 @@ const About = () => {
             <div className="space-y-4">
               <h3 className="text-xl font-playfair font-bold">Expertise</h3>
               <div className="flex flex-wrap gap-3">
-                {["Documentary", "Narrative Film", "Music Videos", "Commercial", "Short Films", "Experimental"].map((skill) => (
+                {[
+                  "Documentary",
+                  "Narrative Film",
+                  "Music Videos",
+                  "Commercial",
+                  "Short Films",
+                  "Experimental",
+                ].map((skill) => (
                   <span
                     key={skill}
                     className="px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-sm text-gold"
