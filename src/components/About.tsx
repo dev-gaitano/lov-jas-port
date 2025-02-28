@@ -4,12 +4,12 @@ const About = () => {
   return (
     <section id="about" className="relative py-24 w-full">
       {/* Background gradients */}
-      <div className="absolute inset-0 bg-gradient-to-bl from-background via-background to-black/50 pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent pointer-events-none"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-bl from-background via-background to-black/50 pointer-events-none"></div> */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-accent/40 via-transparent via-50% to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/30 via-transparent via-20% to-transparent pointer-events-none"></div>
 
       <div className="container px-4 mx-auto relative z-10">
         <div className="flex items-center gap-4 mb-12">
-          <User className="w-8 h-8 text-gold" />
           <h2 className="text-3xl md:text-4xl font-playfair font-bold">
             About Me
           </h2>
@@ -25,7 +25,7 @@ const About = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 -z-10 w-full h-full border-2 border-gold/30 rounded-lg"></div>
+            {/* <div className="absolute -bottom-6 -right-6 -z-10 w-full h-full border-2 border-primary/30 rounded-lg"></div> */}
           </div>
 
           {/* Content */}
@@ -54,7 +54,7 @@ const About = () => {
               </div>
               <div className="glass-panel p-6 text-center">
                 <User className="w-6 h-6 text-gold mx-auto mb-2" />
-                <div className="text-2xl font-bold mb-1">10+</div>
+                <div className="text-2xl font-bold mb-1">15+</div>
                 <div className="text-sm text-white/60">Years Experience</div>
               </div>
             </div>
@@ -66,14 +66,12 @@ const About = () => {
                 {[
                   "Documentary",
                   "Narrative Film",
-                  "Music Videos",
-                  "Commercial",
                   "Short Films",
                   "Experimental",
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-sm text-gold"
+                    className="px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-sm text-secondary"
                   >
                     {skill}
                   </span>

@@ -1,56 +1,55 @@
 const Hero = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden w-full">
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-tr">
-        {/* <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute top-0 left-0 min-w-full min-h-full w-auto h-auto object-cover"
-        >
-          <source
-            src="https://customer-f2t2k1l80a7h8r15.cloudflarestream.com/1e250fd990852516ffb8ca7dbb5391e2/manifest/video.m3u8"
-            type="application/x-mpegurl"
-          />
-          <source
-            src="https://customer-f2t2k1l80a7h8r15.cloudflarestream.com/1e250fd990852516ffb8ca7dbb5391e2/downloads/default.mp4"
-            type="video/mp4"
-          />
-        </video> */}
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden w-full"
+    >
+      {/* Background */}
+      <div className="absolute inset-0 w-full h-full">
         <img
-          src="./assets/Jasmijn Unmask-photography.png"
+          src="src/components/assets/jasmijn-hero.png"
           alt=""
-          className="absolute top-0 left-0 min-w-full min-h-full w-auto h-auto object-cover"
+          className="absolute top-0 left-0 h-full object-cover max-md:object-[-22rem] object-top"
         />
+        <div className="fixed top-0 right-0 h-screen w-[60vw] bg-gradient-to-l from-background/100 to-transparent"></div>
       </div>
 
       {/* Overlay with enhanced gradient */}
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-background/70 to-background"></div> */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-gold/5 pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-black/50 via-transparent to-transparent pointer-events-none"></div>
+      {/* Desktop Gradients */}
+      <div className="fixed top-0 right-0 h-screen w-[60vw] bg-gradient-to-l from-background/100 to-transparent"></div>
+      <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-background to-transparent"></div>
+
+      {/* Mobile Gradients */}
+      <div className="md:hidden absolute inset-0 bg-gradient-to-t from-transparent via-100% to-background/100 pointer-events-none"></div>
+      <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent via-[20px] to-background/100 pointer-events-none"></div>
+
+      {/* All Gradients */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] md:bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/70 via-transparent to-transparent via-30% md:via-40% pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#008083]/40 via-transparent to-transparent via-50% pointer-events-none"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6">
+      <div className="absolute max-md:bottom-8 z-10 w-full px-12 text-center md:text-right flex flex-col items-center md:items-end md:px-36">
         <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fadeIn text-white">
           Jasmijn Schrofer
         </h1>
         <p
-          className="text-xl md:text-2xl text-white/80 mb-8 animate-fadeIn"
+          className="text-xl md:text-2xl text-white/80 mb-4 md:mb-8 animate-fadeIn"
           style={{ animationDelay: "0.3s" }}
         >
           Film Director
         </p>
         <p
-          className="max-w-2xl mx-auto text-lg text-white/70 mb-8 animate-fadeIn"
+          className="max-w-2xl text-lg text-white/70 mb-4 md:mb-8 animate-fadeIn"
           style={{ animationDelay: "0.45s" }}
         >
-          Crafting compelling narratives through the lens of cinema
+          A Dutch/Chinese American documentary filmmaker based in Amsterdam,
+          renowned for visually poetic storytelling and exploration of profound
+          themes. My work often intertwines themes of spirituality, culture, and
+          human connection.
         </p>
         <a
           href="#films"
-          className="inline-block px-8 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/50 rounded-lg text-gold transition-all duration-300 animate-fadeIn"
+          className="inline-block px-8 py-3 bg-primary/10 hover:bg-primary/20 border hover:backdrop-blur border-primary/50 rounded-[24px] text-primary transition-all duration-400 animate-fadeIn"
           style={{ animationDelay: "0.6s" }}
         >
           Explore My Work
@@ -58,7 +57,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute w-full bottom-8 px-36 transform -translate-x-1/2 animate-bounce justify-center md:justify-end hidden md:flex">
         <svg
           className="w-6 h-6 text-white/50"
           fill="none"
@@ -71,7 +70,7 @@ const Hero = () => {
           <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
       </div>
-    </div>
+    </section>
   );
 };
 

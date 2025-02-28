@@ -14,32 +14,33 @@ interface FilmProject {
 const films: FilmProject[] = [
   {
     id: 1,
-    title: "The Silent Echo",
+    title: "Birth of Light",
     year: "2023",
     category: "Short Film",
-    thumbnail: "src/components/assets/Birth of Light_main still.png",
+    thumbnail: "src/components/assets/Birth of Light - poster.png",
     description:
       "A haunting exploration of memory and loss through the eyes of a young artist.",
     awards: ["Best Short Film - Amsterdam Film Festival 2023"],
   },
   {
     id: 2,
-    title: "Urban Rhythms",
+    title: "Tarikat",
     year: "2022",
-    category: "Documentary",
-    thumbnail: "src/components/assets/Tarikat_0b.jpg",
+    category: "Short Film",
+    thumbnail: "src/components/assets/tarikat-poster.jpg",
     description:
-      "A documentary capturing the pulse of city life across three continents.",
+      "A poetic journey into the rituals of a mystical order, blending reality and surrealism.",
+    awards: ["Special Jury Prize - Rotterdam International Film Festival 2022"],
   },
   {
     id: 3,
-    title: "Colors of Dawn",
+    title: "Unfold",
     year: "2021",
-    category: "Feature Film",
-    thumbnail: "src/components/assets/unfold_bright.jpg",
+    category: "Short Film",
+    thumbnail: "src/components/assets/posterUNFOLD300.jpeg",
     description:
-      "A coming-of-age story set against the backdrop of a changing world.",
-    awards: ["Official Selection - Berlin International Film Festival 2022"],
+      "An intimate portrayal of transformation and self-discovery through movement and light.",
+    awards: ["Best Experimental Film - Berlin Short Film Awards 2021"],
   },
 ];
 
@@ -50,11 +51,12 @@ const Films = () => {
     <section id="films" className="relative py-24 bg-background w-full">
       {/* Background gradients */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-black/50 pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-secondary/40 via-transparent via-45% to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-accent/40 via-transparent via-50% to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent/40 via-transparent via-50% to-transparent pointer-events-none"></div>
 
       <div className="container px-4 mx-auto relative z-10">
-        <div className="flex items-center gap-4 mb-12">
-          <FilmIcon className="w-8 h-8 text-gold" />
+        <div className="flex justify-center md:justify-start items-center gap-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold">
             Featured Films
           </h2>
@@ -68,7 +70,7 @@ const Films = () => {
               onMouseEnter={() => setHoveredFilm(film.id)}
               onMouseLeave={() => setHoveredFilm(null)}
             >
-              <div className="relative aspect-video overflow-hidden rounded-lg">
+              <div className="relative aspect-[2/3] overflow-hidden rounded-lg">
                 <img
                   src={film.thumbnail}
                   alt={film.title}
@@ -85,11 +87,11 @@ const Films = () => {
                       </p>
                       {film.awards && (
                         <div className="flex items-center gap-2 text-gold">
-                          <Award className="w-4 h-4" />
+                          {/* <Award className="w-4 h-4" /> */}
                           <span className="text-sm">{film.awards[0]}</span>
                         </div>
                       )}
-                      <button className="mt-4 px-6 py-2 bg-gold/20 hover:bg-gold/30 border border-gold/50 rounded-full flex items-center gap-2 transition-colors duration-300">
+                      <button className="mt-4 px-6 py-2 bg-primary/20 hover:bg-primary/30 border border-primary/50 rounded-full flex items-center gap-2 transition-colors duration-300">
                         <Play className="w-4 h-4" />
                         Watch Trailer
                       </button>
@@ -98,10 +100,10 @@ const Films = () => {
                 )}
               </div>
               <div className="mt-4">
-                <h3 className="font-playfair font-bold text-lg">
+                <h3 className="font-playfair font-bold text-lg flex items-center justify-center md:justify-start">
                   {film.title}
                 </h3>
-                <div className="flex items-center gap-2 text-sm text-white/60">
+                <div className="flex items-center justify-center md:justify-start gap-2 text-sm text-white/60">
                   <span>{film.year}</span>
                   <span>•</span>
                   <span>{film.category}</span>

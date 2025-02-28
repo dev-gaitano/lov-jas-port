@@ -1,23 +1,22 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 228 15% 13%;
+    --background: 0 0% 3%;
     --foreground: 0 0% 98%;
     --card: 228 15% 13%;
     --card-foreground: 0 0% 98%;
     --popover: 228 15% 13%;
     --popover-foreground: 0 0% 98%;
-    --primary: 47 65% 52%;
+    --primary: 22 99% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 222 15% 19%;
+    --secondary: 181 100% 26%;
     --secondary-foreground: 0 0% 98%;
     --muted: 222 15% 19%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 222 15% 19%;
+    --accent: 330 100% 18%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -35,25 +34,38 @@
   body {
     @apply bg-background text-foreground font-inter;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-playfair;
   }
 }
 
 @layer components {
   .nav-link {
-    @apply relative inline-block py-2 px-4 text-foreground/80 hover:text-foreground transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold hover:after:w-full after:transition-all after:duration-300;
+    @apply relative inline-block py-2 px-4 text-foreground/80 hover:text-primary transition-colors duration-300 
+    after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] 
+    after:bg-gradient-to-r after:from-transparent after:via-primary after:to-transparent 
+    after:-translate-x-1/2 after:transition-all after:duration-300 after:ease-in-out 
+    hover:after:w-full hover:after:left-0 hover:after:translate-x-0;
   }
-  
+
   .glass-panel {
     @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg shadow-lg;
   }
-  
+
   .text-gradient {
-    @apply bg-gradient-to-r from-gold to-crimson bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
 }
 
 .hero-overlay {
-  background: linear-gradient(to bottom, rgba(26, 31, 44, 0.3), rgba(26, 31, 44, 0.95));
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 31, 44, 0.3),
+    rgba(26, 31, 44, 0.95)
+  );
 }

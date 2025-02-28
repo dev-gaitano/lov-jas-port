@@ -20,35 +20,49 @@ const Navbar = () => {
           : "w-3/4"
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container px-2 py-4">
         <div className="flex items-center justify-between">
           <a
             href="/"
-            className="text-2xl font-playfair font-bold text-gradient"
+            className="text-2xl font-playfair font-bold text-gradient flex items-center"
           >
-            JS
+            <img
+              src="src/components/assets/jasmijn Schrofer1_JAS logo.png"
+              alt="JAS Logo"
+              className="h-10 ml-4"
+            />
+            {isScrolled ? null : (
+              <p className="w-28 ml-1 text-base text-primary">
+                Jasmijn Schroffer
+              </p>
+            )}
           </a>
           <div className="hidden md:flex items-center space-x-8">
+            <a href="#hero" className="nav-link">
+              Home
+            </a>
             <a href="#films" className="nav-link">
-              <Film className="inline-block w-4 h-4 mr-2" />
               Films
             </a>
             <a href="#showreel" className="nav-link">
-              <Play className="inline-block w-4 h-4 mr-2" />
-              Showreel
+              News
             </a>
             <a href="#about" className="nav-link">
-              <User className="inline-block w-4 h-4 mr-2" />
               About
             </a>
-            <a href="#contact" className="nav-link">
-              <Mail className="inline-block w-4 h-4 mr-2" />
-              Contact
-            </a>
+            {isScrolled ? (
+              <a
+                href="#contact"
+                className="inline-block px-8 py-3 bg-primary/10 hover:bg-primary/20 border hover:backdrop-blur border-primary/50 rounded-[24px] text-primary transition-all duration-400 animate-fadeIn"
+                style={{ animationDelay: "0.6s" }}
+              >
+                Contact
+              </a>
+            ) : null}
           </div>
-          <button className="md:hidden text-foreground">
+          <button className="md:hidden text-foreground mx-4">
             <svg
-              className="w-6 h-6"
+              className="w-8 h-8"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
