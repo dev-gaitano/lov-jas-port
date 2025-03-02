@@ -1,7 +1,7 @@
 {
   "name": "jasmijn-schrofer-portfolio",
   "homepage": "https://dev-gaitano.github.io/lov-jas-port/",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
